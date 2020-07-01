@@ -6,34 +6,49 @@ import Asignatura from './Components/componentesAsignaturas/asignatura';
 import SearchBar from './Components/searchBar';
 import ListaAsignaturas from './Components/componentesAsignaturas/listaAsignaturas';
 import PageAsignaturas from './Pages/pageAsignaturas';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, useLocation } from 'react-router-dom';
 import NotFound from './Components/NotFound';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import PageLecciones from './Pages/pageLecciones';
+import mensajeAsignatura from './Components/componentesLecciones/mensajeAsignatura';
+import PageApartados from './Pages/pageApartados';
+import { AnimatePresence } from 'framer-motion';
+import Owl from './Components/KnowleadgeOwl/owl';
 
 
-function App() {
+function App(props) {
+
+  const location = useLocation();
 
 
-
+  console.log(location)
   return (
-    <div className="App container-fluid">
+    <div className="App container-fluid overflow-hidden">
       <div className="row">
 
 
-
+ 
             <Sidebar></Sidebar>
 
+            <Owl></Owl>
 
-            <div className="container-fluid" style={{marginLeft: "120px", marginRight: "100px", marginTop: "20px"}}>
+            <div className="main-page" style={{ marginRight: "50px", marginTop: "20px"}}>
+            
+               
 
-                <BrowserRouter>
-                    <Switch>
+                <AnimatePresence exitBeforeEnter >
+                    <Switch location={location} key={location.pathname}>
                         <Route exact path="/" component={PageAsignaturas}></Route>
-                        <Route  exact path="/asignatura/:id" component={Bienvenido}></Route>
+                        <Route  exact path="/:asignaturaID" component={PageLecciones}></Route>
+                        <Route exact path="/:asignaturaID/:leccionID" component={PageApartados}></Route>
                         <Route component={NotFound}></Route>
                     </Switch>
-                </BrowserRouter>
+
+                  </AnimatePresence>
+                
             
             </div>
+
 
       </div>
     </div>

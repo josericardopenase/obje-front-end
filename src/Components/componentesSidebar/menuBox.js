@@ -5,8 +5,8 @@ const MenuBox = (props) => {
 
 
     const style = {
-        width: "40px", 
-        height: "40px", 
+        width: "45px", 
+        height: "45px", 
         textAlign: "center",
         borderRadius: "1rem",
         textColor: "#414141"
@@ -25,7 +25,8 @@ const MenuBox = (props) => {
     let styleColor = {fill : "rgba(255, 255, 255, 0.514)"}
     if(props.enable){
         styleColor = {
-            fill: "white"
+            fill: "white",
+            transform: "scale(1)"
         }
     }
 
@@ -35,7 +36,7 @@ const MenuBox = (props) => {
         <div className="mt-4 d-flex justify-content-center rounded-circle iconHover" style={style}>
 
             
-            <svg style={styleColor} class="bi bi-person d-flex flex-column justify-content-center h-100 svgicon" width="1.5em" height="1.5em"  viewBox="0 0 16 16"  xmlns="http://www.w3.org/2000/svg">
+            <svg style={styleColor} className="bi bi-person d-flex flex-column justify-content-center h-100 svgicon" width="1.7em" height="1.7em"  viewBox="0 0 16 16"  xmlns="http://www.w3.org/2000/svg">
                {imagenes}
             </svg>
             

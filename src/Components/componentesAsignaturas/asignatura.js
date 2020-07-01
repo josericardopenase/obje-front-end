@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion';
 
 function Asignatura(props) {
 
     const progressBar = {
         width : "70%",
         height: "3px",
-        backgroundColor: "#925B24",
+        backgroundColor: props.obj.color2,
     }
 
     const progressBarInside = {
@@ -15,13 +16,16 @@ function Asignatura(props) {
         backgroundColor: "white",
     }
 
-    const ruta = "/asignatura/"+props.obj.titulo;
+
+    const ruta = "/"+props.obj.titulo;
 
     return (
+
         
-        <div className="col-xl-3 col-lg-4 col-md-6 mt-4">
+        <motion.div className="col-xl-3 col-lg-4 col-md-6 mt-4"     whileHover={{ scale: 1.05 }}
+ transition={{duration: 0.3}} initial={{opacity: 0, scale: 0.6}} animate={{opacity: 1, scale: 1}} exit={{opacity: 0, scale: 0.6}}>
             <Link to={ruta} className=" text-decoration-none  align-items-stretch">
-                <div className="card text-white border-0 w-100  mb-lg-0 position-relative" style={{backgroundColor: props.obj.color1, borderRadius: "30px 30px"}}>
+                <div className="card text-white border-0 w-100  mb-lg-0 position-relative" style={{backgroundColor: props.obj.color1, borderRadius: "10px 10px"}}>
                     <div className="">
 
                         <div className="row text-right justify-content-end w-100 m-0">
@@ -39,7 +43,7 @@ function Asignatura(props) {
                     </div>
                 </div>
             </Link>
-        </div>
+        </motion.div>
 
     )
 

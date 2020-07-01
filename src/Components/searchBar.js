@@ -10,7 +10,7 @@ function SearchBar() {
 
     return (
         <div className="w-100 mt-5 mb-5">
-            <input class="form-control rounded-pill" style={style} type="text" placeholder="Buscar..." aria-label="Search"></input>
+            <input className="form-control rounded-pill" style={style} type="text" placeholder="Buscar..." aria-label="Search"></input>
         </div>
     )
 }

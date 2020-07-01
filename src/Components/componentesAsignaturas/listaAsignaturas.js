@@ -12,9 +12,12 @@ const ListaAsignaturas = (props) => {
 
 
     return (
-        <div className="mt-4">
-                <h5>{props.obj[0]}</h5>
-                <div class="row">
+        <div className="mt-5 mb-3 pt-5 ">
+                <div className="d-flex mb-3">
+                <h5 style={{whiteSpace: "nowrap", color: "#7a7a7a"}}>{props.obj[0]}</h5>
+                <div style={{height: "2px", backgroundColor: "#e6e6e6"}} className="w-100 mt-3 ml-2"></div>
+                </div>
+                <div className="row">
 
                   {Lista}
                   
