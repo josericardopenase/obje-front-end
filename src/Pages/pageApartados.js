@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import MensajeAsignatura from '../Components/componentesLecciones/mensajeAsignatura'
-import SearchBar from '../Components/searchBar';
+import SearchBar from '../Components/componentesAsignaturas/searchBar';
 import Apartado from '../Components/componentesApartados/apartado';
 import  { useState} from 'react';
 import ListaApartados from '../Components/componentesApartados/listaApartados';
@@ -49,12 +49,13 @@ function PageApartados(props) {
     const [zoom, setZoom] = useState(false);
     const scrollYProgress = useViewportScroll();
 
-    const ChangeLeccion = (id) => {
+    function ChangeLeccion(id){
 
         //futuramente aqui habra un fetch.
         var leccion = DataBase.find(o => o.id === id)
 
         setLoading(true)
+
         setTimeout(function(){
             setLeccionActual(leccion)
             window.scrollTo(0, 0)
@@ -64,18 +65,6 @@ function PageApartados(props) {
 
     }
 
-    let classZoom;
-    let classZoom1;
-
-    if(!zoom){
-        classZoom = "col-md-8  p-5"
-        classZoom1 = "col-md-4 flex-column"
-        
-    }else{
-        classZoom = "col-md-12  p-5 container"
-        classZoom1 = "col-md-4 flex-column d-none"
-    }
-    
 
     return (
 
@@ -88,7 +77,7 @@ function PageApartados(props) {
 
            <div className="row">
 
-               <div className={classZoom1}>
+               <div className={zoom ? "col-md-4 flex-column d-none" :  "col-md-4 flex-column" }>
                     
                     <motion.div className="position-fixed" style={{width: "30%"}} initial={{opacity: 0, x: -400}}
                                 animate={{ opacity: 1, x: 0}} exit={{opacity: 0, x: -400}}>   
@@ -103,14 +92,14 @@ function PageApartados(props) {
 
                    
 
-               <motion.div className={classZoom}   initial={{opacity: 0, y: 400}} animate={{ opacity: 1, y: 0} } 
+               <motion.div className={zoom ? "col-md-12 flex-column" : "col-md-8  p-5" }   initial={{opacity: 0, y: 400}} animate={{ opacity: 1, y: 0} } 
                exit={{opacity: 0, y: 400}} transition={{delay: "0.4"}} >
 
-                   <motion.div  className="container" initial={{opacity: loading ? 0 : 1}} animate={{ opacity: loading ? 0 : 1}} transition={{duration: 0.4}}>
+                   <motion.div  className="container" initial={{opacity: loading ? 0 : 1, minWidth: "60%"}} animate={{ opacity: loading ? 0 : 1}} transition={{duration: 0.4}}>
                         <video className="w-100 mb-4"  controls></video>
                         
 
-                        <div className="row m-0 p-0">
+                        <div className="row m-0 p-0 justify-content-between">
                             <h1>{leccionActual.nombre}</h1>
 
                             <svg width="2.5em" height="2.5em" viewBox="0 0 16 16" class="ml-4 bi bi-arrows-fullscreen" fill="currentColor" xmlns="http://www.w3.org/2000/svg" onClick={() => setZoom(!zoom)}>

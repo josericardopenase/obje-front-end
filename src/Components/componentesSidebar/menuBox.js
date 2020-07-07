@@ -23,10 +23,11 @@ const MenuBox = (props) => {
     }
 
     let styleColor = {fill : "rgba(255, 255, 255, 0.514)"}
+    
     if(props.enable){
         styleColor = {
             fill: "white",
-            transform: "scale(1)"
+            transform: "scale(1.2)",
         }
     }
 

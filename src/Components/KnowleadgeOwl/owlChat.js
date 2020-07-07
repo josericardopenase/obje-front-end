@@ -7,41 +7,16 @@ function OwlChat(props) {
 
     const [chat, setChat] = useState([ {texto: "Good morgning human! Are you ready to study one hour", sender: 0}])
 
-    const chatStyle = {
-        position: "fixed",
-        zIndex: "3001",
-        overflowX: "hidden",
-        bottom: 0,
-        right: 0,
-        width: "20rem",
-        backgroundColor: "white",
-        height: "26rem", 
-        borderRadius: "1rem 0rem 0rem 0rem",
-        fontWeight: "800",
-        backgroundColor: "#c2fc9a"
-    
-    }
-
     function addChatMessage(_sender, _msg){
         if(_msg != ""){
-
             //CUANDO LO ENVIA UN HUMANO
             if(_sender === 1){
                 setChat(chat.concat({texto: _msg, sender: _sender}))
                 //Buscar en la api la respuesta del robot y hacerla
-
             }else{
-
                 setChat(chat.concat({texto: _msg, sender: _sender}))
-            
             }
-
-            
-            
-        
         }
-
-
     }
 
     function keyPress(e){
@@ -110,6 +85,20 @@ function OwlChat(props) {
 }
 
 
+const chatStyle = {
+    position: "fixed",
+    zIndex: "3001",
+    overflowX: "hidden",
+    bottom: 0,
+    right: 0,
+    width: "18rem",
+    backgroundColor: "white",
+    height: "26rem", 
+    borderRadius: "1rem 0rem 0rem 0rem",
+    fontWeight: "800",
+    backgroundColor: "#c2fc9a"
+
+}
 const writeStyle =  {
     width: "100%",
     backgroundColor: "#f5f5f5",

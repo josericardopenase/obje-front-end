@@ -52,12 +52,6 @@ function PageLecciones(props) {
         }
     ]
 
-    const mostrar = fetchInfo.map((obj) => {
-        return (
-            <ListaLecciones obj={obj}></ListaLecciones>
-        )
-    })
-
 
 
     return (
@@ -68,14 +62,15 @@ function PageLecciones(props) {
 
             <MensajeAsignatura asignatura = {asignatura}></MensajeAsignatura>
             
-            <div className="">
-            
-            {
-                mostrar
-            }
-            
+                <div className="">
+                
+                    {
+                        fetchInfo.map(obj => <ListaLecciones obj={obj}></ListaLecciones>)
+                    
+                    }
+                
 
-            </div>
+                </div>
 
             </motion.div>
         

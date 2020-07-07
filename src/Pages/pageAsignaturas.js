@@ -1,7 +1,7 @@
 import React from 'react'
 import ListaAsignaturas from '../Components/componentesAsignaturas/listaAsignaturas'
-import SearchBar from '../Components/searchBar'
-import Bienvenido from '../Components/bienvenido'
+import SearchBar from '../Components/componentesAsignaturas/searchBar'
+import Bienvenido from '../Components/componentesAsignaturas/bienvenido'
 import { AnimatePresence, motion } from "framer-motion"
 
 const PageAsignaturas = (props) => {

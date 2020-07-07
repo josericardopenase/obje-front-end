@@ -17,9 +17,6 @@ const Owl = () => {
         <div>
 
             <div style={owlStyle}>
-                
-                
-
 
                 <div  className="d-flex justify-content-end" style={{verticalAlign: "baseline"}} >
 

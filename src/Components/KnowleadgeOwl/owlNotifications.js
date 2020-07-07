@@ -18,7 +18,7 @@ function OwlNotifications() {
 
 
     //añade un mensaje en el buhito
-    function addMessage(msg){
+    function postNotification(msg){
 
         setListMessages(listMessages.concat(msg))
         

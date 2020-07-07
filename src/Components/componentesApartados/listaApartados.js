@@ -16,6 +16,7 @@ function ListaApartados(props) {
             <h4 className="mt-5 mb-5">Apartados:</h4>
 
             {listaApartados}
+            
          </div>
     )
 }
