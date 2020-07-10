@@ -119,3 +119,19 @@ code {
     transform: scale(1);
  }
 }
+
+
+/** code by webdevtrick ( https://webdevtrick.com ) **/
+::-webkit-scrollbar {
+   width: 5px;          
+}
+ 
+::-webkit-scrollbar-thumb {   
+  border-radius: 30px;
+  background: #b5b5b5;
+  margin-left: 1rem;
+} 
+::-webkit-scrollbar-track {     
+  background-color: #fff;
+
+}

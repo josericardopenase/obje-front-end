@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 function Apartado(props) {
     
     return (
-        <div onClick={props.onClick} className="w-100 text-left bg-light overflow-hidden mb-3 " style={{borderRadius: "1rem"}}>
+        <div onClick={props.onClick} className="text-left bg-light overflow-hidden mb-3 mr-3 " style={{borderRadius: "1rem"}}>
                    
         <div className="row pt-3 pb-3 pl-3 pr-3 " style={{cursor: !props.enabled ? "pointer" : ""}}>
             

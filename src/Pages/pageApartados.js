@@ -18,26 +18,45 @@ function PageApartados(props) {
 
     const DataBase = [
         {
-            id: "25",
-            nombre : "Penelope",
+            id: "1",
+            nombre : "Concepto de una matriz",
             time: "25h",
             contenido: "Hola me llamo juan asdffdsfasdfasd"
 
-        },{
+        },
+        {
             id: "2",
-            nombre : "Penelope2",
+            nombre : "Suma de matrices",
             time: "25h",
             contenido: "Hola me llamo juan jafsdlñlkfsd"
         },
         {
-            id: "13",
-            nombre : "Denelope20",
+            id: "3",
+            nombre : "Producto de matrices",
             time: "25h",
             contenido: "Hola me llamo juan franco"
         },
         {
-            id: "15",
-            nombre : "Eeres un cruck",
+            id: "4",
+            nombre : "Determinante",
+            time: "25h",
+            contenido: "Hola me llamo juan francisco"
+        },
+        {
+            id: "5",
+            nombre : "Matriz inversa",
+            time: "25h",
+            contenido: "Hola me llamo juan francisco"
+        },
+        {
+            id: "6",
+            nombre : "Matriz transpuesta",
+            time: "25h",
+            contenido: "Hola me llamo juan francisco"
+        }
+        ,        {
+            id: "7",
+            nombre : "Rango",
             time: "25h",
             contenido: "Hola me llamo juan francisco"
         }
@@ -47,12 +66,18 @@ function PageApartados(props) {
     const [leccionActual, setLeccionActual] = useState(DataBase[0]);
     const [loading, setLoading] = useState(false);
     const [zoom, setZoom] = useState(false);
+    const [scroll, setScroll] = useState(false);
     const scrollYProgress = useViewportScroll();
+
+    const scrollXprogress = useViewportScroll();
 
     function ChangeLeccion(id){
 
+        
+
         //futuramente aqui habra un fetch.
         var leccion = DataBase.find(o => o.id === id)
+
 
         setLoading(true)
 
@@ -77,13 +102,32 @@ function PageApartados(props) {
 
            <div className="row">
 
-               <div className={zoom ? "col-md-4 flex-column d-none" :  "col-md-4 flex-column" }>
+               <div className={zoom ? "col-md-4 flex-column d-none" :  "col-md-3 flex-column mb-5" }>
                     
-                    <motion.div className="position-fixed" style={{width: "30%"}} initial={{opacity: 0, x: -400}}
+                    <motion.div className="position-fixed mb-5" onMouseEnter={() => setScroll(true)} onMouseLeave={() => setScroll(false)} style={{width: "25%", overflowX: "hidden", overflowY: scroll ? "auto" : "hidden", height: "90vh"}} initial={{opacity: 0, x: -400}}
                                 animate={{ opacity: 1, x: 0}} exit={{opacity: 0, x: -400}}>   
                         
                         <MensajeAsignatura asignatura={leccion}></MensajeAsignatura>
                         
+                        <div className="row mt-4 justify-content-center">
+                            <div className="pr-3 pl-3 pt-5 pb-5 mr-3 flex-column justify-content-center text-center" style={{width: "15rem !important", backgroundColor: "#f5f5f5", borderRadius: "1rem"}}>
+                            <svg id="Capa_1" enable-background="new 0 0 512 512" height="82" viewBox="0 0 512 512" width="82"  fill="grey" xmlns="http://www.w3.org/2000/svg"><g><path d="m145.397 482h-29.681v30h280.569v-30h-29.681v-99.146h-221.207z"/><path d="m376.028 101.168v-31.012h-240.055v31.012h-92.77v15c0 62.959 44.661 116.642 105.422 128.793 15.233 30.394 42.992 53.462 76.467 62.391l-34.446 45.502h130.378l-34.39-45.427c33.598-8.875 61.467-31.988 76.742-62.465 60.76-12.15 105.422-65.834 105.422-128.793v-15h-92.77zm-301.717 30h61.661s.532 73.139 1.541 79.39c-33.415-13.104-57.834-43.352-63.202-79.39zm300.176 79.39c1.009-6.251 1.541-79.39 1.541-79.39h61.661c-5.369 36.038-29.787 66.286-63.202 79.39z"/><path d="m135.973 0h240.055v40.156h-240.055z"/></g></svg>
+
+                            </div>
+
+                            <div className="pr-3 pl-3 pt-5 pb-5 mr-3 flex-column justify-content-center text-center" style={{width: "15rem !important", backgroundColor: "#f5f5f5", borderRadius: "1rem"}}>
+                            <svg id="Capa_1" enable-background="new 0 0 512 512" height="82" viewBox="0 0 512 512" width="82"  fill="grey" xmlns="http://www.w3.org/2000/svg"><g><path d="m145.397 482h-29.681v30h280.569v-30h-29.681v-99.146h-221.207z"/><path d="m376.028 101.168v-31.012h-240.055v31.012h-92.77v15c0 62.959 44.661 116.642 105.422 128.793 15.233 30.394 42.992 53.462 76.467 62.391l-34.446 45.502h130.378l-34.39-45.427c33.598-8.875 61.467-31.988 76.742-62.465 60.76-12.15 105.422-65.834 105.422-128.793v-15h-92.77zm-301.717 30h61.661s.532 73.139 1.541 79.39c-33.415-13.104-57.834-43.352-63.202-79.39zm300.176 79.39c1.009-6.251 1.541-79.39 1.541-79.39h61.661c-5.369 36.038-29.787 66.286-63.202 79.39z"/><path d="m135.973 0h240.055v40.156h-240.055z"/></g></svg>
+
+                            </div>
+
+                            <div className="pr-3 pl-3 pt-5 pb-5 mr-3 flex-column justify-content-center text-center" style={{width: "15rem !important", backgroundColor: "#f5f5f5", borderRadius: "1rem"}}>
+                            <svg id="Capa_1" enable-background="new 0 0 512 512" height="82" viewBox="0 0 512 512" width="82"  fill="grey" xmlns="http://www.w3.org/2000/svg"><g><path d="m145.397 482h-29.681v30h280.569v-30h-29.681v-99.146h-221.207z"/><path d="m376.028 101.168v-31.012h-240.055v31.012h-92.77v15c0 62.959 44.661 116.642 105.422 128.793 15.233 30.394 42.992 53.462 76.467 62.391l-34.446 45.502h130.378l-34.39-45.427c33.598-8.875 61.467-31.988 76.742-62.465 60.76-12.15 105.422-65.834 105.422-128.793v-15h-92.77zm-301.717 30h61.661s.532 73.139 1.541 79.39c-33.415-13.104-57.834-43.352-63.202-79.39zm300.176 79.39c1.009-6.251 1.541-79.39 1.541-79.39h61.661c-5.369 36.038-29.787 66.286-63.202 79.39z"/><path d="m135.973 0h240.055v40.156h-240.055z"/></g></svg>
+
+                            </div>
+
+                            
+
+                        </div>
                         <ListaApartados database={DataBase} leccionActual = {leccionActual} onClick = {ChangeLeccion}></ListaApartados>
                     
                     </motion.div>
@@ -92,15 +136,18 @@ function PageApartados(props) {
 
                    
 
-               <motion.div className={zoom ? "col-md-12 flex-column" : "col-md-8  p-5" }   initial={{opacity: 0, y: 400}} animate={{ opacity: 1, y: 0} } 
+               <motion.div className={zoom ? "col-md-12 flex-column" : "col-md-9  pl-5" }   initial={{opacity: 0, y: 400}} animate={{ opacity: 1, y: 0} } 
                exit={{opacity: 0, y: 400}} transition={{delay: "0.4"}} >
 
-                   <motion.div  className="container" initial={{opacity: loading ? 0 : 1, minWidth: "60%"}} animate={{ opacity: loading ? 0 : 1}} transition={{duration: 0.4}}>
-                        <video className="w-100 mb-4"  controls></video>
+                   <motion.div  className="container p-5" initial={{opacity: loading ? 0 : 1, minWidth: "60%"}} animate={{ opacity: loading ? 0 : 1}} transition={{duration: 0.4}}>
+                        {/* <video className="w-100 mb-4"  controls></video> */}
                         
 
-                        <div className="row m-0 p-0 justify-content-between">
-                            <h1>{leccionActual.nombre}</h1>
+                        <div className="row m-0  justify-content-between">
+                            <div>
+                            <h4 className="text-muted">Triangles and Trigonometry</h4>
+                            <h1 style={{fontWeight: "700"}}>Propiedades de los triangulos</h1>
+                            </div>
 
                             <svg width="2.5em" height="2.5em" viewBox="0 0 16 16" class="ml-4 bi bi-arrows-fullscreen" fill="currentColor" xmlns="http://www.w3.org/2000/svg" onClick={() => setZoom(!zoom)}>
                                 <path fill-rule="evenodd" d="M1.464 10.536a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3.5a.5.5 0 0 1-.5-.5v-3.5a.5.5 0 0 1 .5-.5z"/>
@@ -112,21 +159,28 @@ function PageApartados(props) {
                         </div>
 
 
-                        <p className="w-100 mt-5">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
+                        <div className="mt-3">
+                            
+                            <div className="parrafo mt-5 text-muted">
+                                <p style={{fontSize: "20px"}}>
+                                                                        Let’s start simple: a triangle is a closed shape that has three sides (which are line segments
+                                        A line segment is the part of a <span style={{borderBottom: "3px rgb(255, 136, 0) solid"}}>line</span> that lies between two points, without extending to infinity. We can label line segments from point A to point B as AB‾.
 
-                        <p className="w-100 mt-5">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
+                                        Learn more…
+
+                                        ) and three vertices (the <span style={{borderBottom: "3px rgb(255, 136, 0) solid"}}>points</span>
+                                        . A point is a specific location in space. Points describe a position, but have no size or shape themselves.
+
+                                        Learn more…
+
+                                        where the sides meet). It also has three internal angles
+                                        The internal angles of a polygon are the angles on the inside, at every vertex.
+
+                                        , and we already know that the sum of them is always 180°.
+                                </p>
+                            </div>
+                            
+                        </div>
                         
                     </motion.div>
 
