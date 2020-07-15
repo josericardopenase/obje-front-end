@@ -19,7 +19,7 @@ function Leccion(props) {
     const progressBar = {
         width : "70%",
         height: "3px",
-        backgroundColor: "#57330a",
+        backgroundColor: "#350e45",
     }
 
     const progressBarInside = {
@@ -31,7 +31,7 @@ function Leccion(props) {
                     
         <motion.div className="col-xl-3 col-lg-4 col-md-6 mt-4" whileHover={{scale: 1.02}}>
             <Link to={ruta} className=" text-decoration-none  align-items-stretch">
-                <div className="card text-white border-0 w-100  mb-lg-0 position-relative " style={{backgroundColor: "#FF8800", borderRadius: "15px 15px"}}>
+                <div className="card text-white border-0 w-100  mb-lg-0 position-relative " style={{backgroundColor: "#8605B9", borderRadius: "15px 15px"}}>
                     <div className="row p-3">
                         <div className="col-4">
                         <svg className="bi bi-egg w-100 h-100"viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

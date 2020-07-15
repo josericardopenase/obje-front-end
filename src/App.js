@@ -17,6 +17,8 @@ import Owl from './Components/KnowleadgeOwl/owl';
 import MenuBox from './Components/componentesSidebar/menuBox';
 import ListaMenuSidebar from './Components/componentesSidebar/listaMenuSidebar';
 import PageFlashcards from './Pages/pageFlashcards';
+import Base from './Containers/base';
+import PagePlayFlashcards from './Pages/PagePlayFlashcards';
 
 
 function App(props) {
@@ -39,16 +41,17 @@ function App(props) {
 
             <Owl></Owl>
 
-            <div className="main-page" style={{ marginRight: "80px", marginTop: "50px",   marginLeft: "120px"}}>
             
                
 
                 <AnimatePresence exitBeforeEnter >
                     <Switch location={location} key={location.pathname}>
                         <Route exact path="/" component={PageAsignaturas}></Route>
+                        <Route exact path="/flashcards/:id" component={PagePlayFlashcards}></Route>
                         <Route exact path="/flashcards" component={PageFlashcards}></Route>
                         <Route  exact path="/:asignaturaID" component={PageLecciones}></Route>
                         <Route exact path="/:asignaturaID/:leccionID" component={PageApartados}></Route>
+
                         
                         
                         <Route component={NotFound}></Route>
@@ -57,7 +60,7 @@ function App(props) {
                   </AnimatePresence>
                 
             
-            </div>
+
 
 
       </div>

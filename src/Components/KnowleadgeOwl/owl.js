@@ -75,7 +75,7 @@ const squareStyle = {
 }
 
 const owlStyle = {
-    zIndex: "3000",
+    zIndex: "100",
     position: "fixed",
     bottom: 0,
     right: 0,

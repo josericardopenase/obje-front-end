@@ -17,6 +17,9 @@ function OwlNotifications() {
     listMessagesRef.current = listMessages
 
 
+    
+
+
     //añade un mensaje en el buhito
     function postNotification(msg){
 
@@ -27,6 +30,8 @@ function OwlNotifications() {
 
         }, 4000)
     }
+
+
 
 
 

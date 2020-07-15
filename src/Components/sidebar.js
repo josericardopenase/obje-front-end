@@ -8,13 +8,15 @@ const Sidebar = (props) => {
 
 
     return (
-        <div className=" position-fixed" style={{backgroundColor: "#7BC942", height : "100vh", width:"70px", zIndex: '300' }}>
+        <div className=" position-fixed" style={{backgroundColor: "white", height : "100vh", width:"65px", zIndex: '600'}}>
 
             <div className="d-flex justify-content-center w-100" >
                 <div className="d-flex  flex-column  justify-content-between p-3" style={{height: "100vh"}} >
                    
                     <Link to="/">
-                        <img className = "w-100" src={logo}></img>
+                        <div className="w-100 d-flex justify-content-center">
+                        <img className = "w-75" src={logo}></img>
+                        </div>
                     </Link>
                     
                     <div>

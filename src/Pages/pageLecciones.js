@@ -9,6 +9,7 @@ import {
   } from "react-router-dom";
 import { motion } from 'framer-motion';
 import {notificacion} from '../Components/KnowleadgeOwl/owlNotifications';
+import Base from '../Containers/base';
 
 function PageLecciones(props) {
 
@@ -18,35 +19,34 @@ function PageLecciones(props) {
 
     const fetchInfo = [
         {
-            bloque : "Bloque 1: Algebra",
+            bloque : "Bloque 1: Grammar",
             lecciones : [
                 {
-                    nombre: "matriz"
+                    nombre: "Present tenses"
+                },{
+                    nombre: "Past tenses"
                 },
                 {
-                    nombre: "la recta"
+                    nombre: "Future tenses"
                 },
                 {
-                    nombre: "el plano"
-                },
-                {
-                    nombre: "Penelope"
+                    nombre: "Perfect tenses"
                 }
             ]
         },
         {
-            bloque : "Bloque 2: Mentiras",
+            bloque : "Bloque 2: writing",
             lecciones : [
                 {
-                    nombre: "mentira1"
+                    nombre: "Letter"
                 },
                 {
-                    nombre: "mentira2"
+                    nombre: "E-mail"
                 },
                 {
-                    nombre: "mentira3"
+                    nombre: "Essay"
                 },{
-                    nombre: "mnt"
+                    nombre: "Pros and cons"
                 }
             ]
         }
@@ -55,6 +55,8 @@ function PageLecciones(props) {
 
 
     return (
+
+        <Base>
         <motion.div
         initial={{opacity: 0}}
         animate={{ opacity: 1}}
@@ -73,6 +75,7 @@ function PageLecciones(props) {
                 </div>
 
             </motion.div>
+            </Base>
         
     )
 }

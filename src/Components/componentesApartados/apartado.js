@@ -12,7 +12,7 @@ function Apartado(props) {
             {/* TITULO */}
 
             <div className="col-xl-2 col-lg-3 col-md-4 col-4">
-                <div className="ml-1" style={{backgroundColor: "rgb(255, 136, 0)", width: "55px", height:"55px",  borderRadius: "0.5rem"}}>
+                <div className="ml-1" style={{backgroundColor: "#8605B9", width: "55px", height:"55px",  borderRadius: "0.5rem"}}>
                     <div className="h-100 d-flex justify-content-center" >
                         <div className="flex-column h-100 justify-content-center d-flex text-left">
 
@@ -41,7 +41,7 @@ function Apartado(props) {
         
 
             {props.enabled === true ? (
-            <motion.div className="w-100 " style={{height: "4px", backgroundColor: "rgb(255, 136, 0)"}}></motion.div>
+            <motion.div className="w-100 " style={{height: "4px", backgroundColor: "#8605B9"}}></motion.div>
 
             ) : (
                 <div></div>

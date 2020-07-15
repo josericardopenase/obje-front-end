@@ -3,6 +3,7 @@ import ListaAsignaturas from '../Components/componentesAsignaturas/listaAsignatu
 import SearchBar from '../Components/componentesAsignaturas/searchBar'
 import Bienvenido from '../Components/componentesAsignaturas/bienvenido'
 import { AnimatePresence, motion } from "framer-motion"
+import Base from '../Containers/base'
 
 const PageAsignaturas = (props) => {
 
@@ -10,93 +11,39 @@ const PageAsignaturas = (props) => {
         "Troncales",
         {
           titulo : "Matemáticas II",
-          color1: "#FF8800",
-          color2: "#57330a"
+          color1: "#fe585b",
+          color2: "#f97c7e",
+          imagen: "infinito.png"
+        },
+        {
+          titulo : "Inglés",
+          color1: "#b069fe",
+          color2: "#bd79ff",
+          imagen: "inglaterra.png"
         },
         {
           titulo : "Lengua y literatura",
-          color1: "#336BFF",
-          color2: "#121f42"
+          color1: "#508df9",
+          color2: "#6b99ff",
+          imagen: "libro.png"
         },
         {
           titulo : "Historia de españa",
-          color1: "#15a339",
-          color2: "#041f0b"
+          color1: "#0cd25d",
+          color2: "#30dc80",
+          imagen: "historia.png"
         },
-        {
-          titulo : "Inglés",
-          color1: "#8605B9",
-          color2: "#23082e"
-        }
+
   
       ]
 
-      const dataBase2 = [
-        "Opcionales 1",
-        {
-          titulo : "Matemáticas II",
-          color1: "#FF8800",
-          color2: "#57330a"
-        },
-        {
-          titulo : "Lengua y literatura",
-          color1: "#336BFF",
-          color2: "#121f42"
-        },
-        {
-          titulo : "Historia de españa",
-          color1: "#15a339",
-          color2: "#041f0b"
-        },
-        {
-          titulo : "Inglés",
-          color1: "#8605B9",
-          color2: "#23082e"
-        },
-        {
-          titulo : "Inglés",
-          color1: "#8605B9",
-          color2: "#23082e"
-        }
-  
-      ]
-
-
-      const dataBase3 = [
-        "Opcionales 2",
-        {
-          titulo : "Matemáticas II",
-          color1: "#FF8800",
-          color2: "#57330a"
-        },
-        {
-          titulo : "Lengua y literatura",
-          color1: "#336BFF",
-          color2: "#121f42"
-        },
-        {
-          titulo : "Historia de españa",
-          color1: "#15a339",
-          color2: "#041f0b"
-        },
-        {
-          titulo : "Inglés",
-          color1: "#8605B9",
-          color2: "#23082e"
-        },
-        {
-          titulo : "Inglés",
-          color1: "#8605B9",
-          color2: "#23082e"
-        }
-  
-      ]
 
 
 
 
       
     return (
+      <Base>
         <motion.div
         initial={{opacity: 0}}
         animate={{ opacity: 1 }}
@@ -110,9 +57,6 @@ const PageAsignaturas = (props) => {
             
             <ListaAsignaturas obj = {dataBase}></ListaAsignaturas>
 
-            <ListaAsignaturas obj = {dataBase2}></ListaAsignaturas>
-
-            <ListaAsignaturas obj = {dataBase3}></ListaAsignaturas>
 
 
             
@@ -122,6 +66,7 @@ const PageAsignaturas = (props) => {
             
 
         </motion.div>
+        </Base>
     )
 }
 

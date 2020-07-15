@@ -11,6 +11,9 @@ import {
     useTransform
   } from "framer-motion";
 import ScrollFillCircle from '../Components/componentesDecorativos/scrollFillCircle';
+import { Tooltip } from 'react-bootstrap';
+import TooltipCustom from '../Components/componentesDecorativos/tooltipCustom';
+import Base from '../Containers/base';
 
 function PageApartados(props) {
 
@@ -19,46 +22,34 @@ function PageApartados(props) {
     const DataBase = [
         {
             id: "1",
-            nombre : "Concepto de una matriz",
+            nombre : "Present perfect",
             time: "25h",
             contenido: "Hola me llamo juan asdffdsfasdfasd"
 
         },
         {
             id: "2",
-            nombre : "Suma de matrices",
+            nombre : "Present continuous",
             time: "25h",
             contenido: "Hola me llamo juan jafsdlñlkfsd"
         },
         {
             id: "3",
-            nombre : "Producto de matrices",
+            nombre : "Present continuous",
             time: "25h",
-            contenido: "Hola me llamo juan franco"
+            contenido: "Hola me llamo juan jafsdlñlkfsd"
         },
         {
             id: "4",
-            nombre : "Determinante",
+            nombre : "Present continuous",
             time: "25h",
-            contenido: "Hola me llamo juan francisco"
+            contenido: "Hola me llamo juan jafsdlñlkfsd"
         },
         {
             id: "5",
-            nombre : "Matriz inversa",
+            nombre : "Present continuous",
             time: "25h",
-            contenido: "Hola me llamo juan francisco"
-        },
-        {
-            id: "6",
-            nombre : "Matriz transpuesta",
-            time: "25h",
-            contenido: "Hola me llamo juan francisco"
-        }
-        ,        {
-            id: "7",
-            nombre : "Rango",
-            time: "25h",
-            contenido: "Hola me llamo juan francisco"
+            contenido: "Hola me llamo juan jafsdlñlkfsd"
         }
     ]
 
@@ -93,6 +84,7 @@ function PageApartados(props) {
 
     return (
 
+        <Base>
         <motion.div
         initial={{opacity: 0}}
         animate={{ opacity: 1}}
@@ -102,9 +94,9 @@ function PageApartados(props) {
 
            <div className="row">
 
-               <div className={zoom ? "col-md-4 flex-column d-none" :  "col-md-3 flex-column mb-5" }>
+               <div onMouseEnter={() => setScroll(true)} onMouseLeave={() => setScroll(false)}  className={zoom ? "col-md-4 flex-column d-none" :  "col-md-3 flex-column mb-5" } style={{zInxed: "200" }}>
                     
-                    <motion.div className="position-fixed mb-5" onMouseEnter={() => setScroll(true)} onMouseLeave={() => setScroll(false)} style={{width: "25%", overflowX: "hidden", overflowY: scroll ? "auto" : "hidden", height: "90vh"}} initial={{opacity: 0, x: -400}}
+                    <motion.div className="position-fixed mb-5" style={{width: "25%", overflowX: "hidden", overflowY: scroll ? "auto" : "hidden", height: "90vh"}} initial={{opacity: 0, x: -400}}
                                 animate={{ opacity: 1, x: 0}} exit={{opacity: 0, x: -400}}>   
                         
                         <MensajeAsignatura asignatura={leccion}></MensajeAsignatura>
@@ -115,14 +107,14 @@ function PageApartados(props) {
 
                             </div>
 
-                            <div className="pr-3 pl-3 pt-5 pb-5 mr-3 flex-column justify-content-center text-center" style={{width: "15rem !important", backgroundColor: "#f5f5f5", borderRadius: "1rem"}}>
-                            <svg id="Capa_1" enable-background="new 0 0 512 512" height="82" viewBox="0 0 512 512" width="82"  fill="grey" xmlns="http://www.w3.org/2000/svg"><g><path d="m145.397 482h-29.681v30h280.569v-30h-29.681v-99.146h-221.207z"/><path d="m376.028 101.168v-31.012h-240.055v31.012h-92.77v15c0 62.959 44.661 116.642 105.422 128.793 15.233 30.394 42.992 53.462 76.467 62.391l-34.446 45.502h130.378l-34.39-45.427c33.598-8.875 61.467-31.988 76.742-62.465 60.76-12.15 105.422-65.834 105.422-128.793v-15h-92.77zm-301.717 30h61.661s.532 73.139 1.541 79.39c-33.415-13.104-57.834-43.352-63.202-79.39zm300.176 79.39c1.009-6.251 1.541-79.39 1.541-79.39h61.661c-5.369 36.038-29.787 66.286-63.202 79.39z"/><path d="m135.973 0h240.055v40.156h-240.055z"/></g></svg>
-
+                            <div className="pr-3 pl-3 pt-5 pb-5 mr-3 flex-column justify-content-center text-center" style={{maxWidth: "15rem !important", backgroundColor: "#f5f5f5", borderRadius: "1rem"}}>
+                                <h2>57%</h2>
+                                <p>Completado</p>
                             </div>
 
                             <div className="pr-3 pl-3 pt-5 pb-5 mr-3 flex-column justify-content-center text-center" style={{width: "15rem !important", backgroundColor: "#f5f5f5", borderRadius: "1rem"}}>
-                            <svg id="Capa_1" enable-background="new 0 0 512 512" height="82" viewBox="0 0 512 512" width="82"  fill="grey" xmlns="http://www.w3.org/2000/svg"><g><path d="m145.397 482h-29.681v30h280.569v-30h-29.681v-99.146h-221.207z"/><path d="m376.028 101.168v-31.012h-240.055v31.012h-92.77v15c0 62.959 44.661 116.642 105.422 128.793 15.233 30.394 42.992 53.462 76.467 62.391l-34.446 45.502h130.378l-34.39-45.427c33.598-8.875 61.467-31.988 76.742-62.465 60.76-12.15 105.422-65.834 105.422-128.793v-15h-92.77zm-301.717 30h61.661s.532 73.139 1.541 79.39c-33.415-13.104-57.834-43.352-63.202-79.39zm300.176 79.39c1.009-6.251 1.541-79.39 1.541-79.39h61.661c-5.369 36.038-29.787 66.286-63.202 79.39z"/><path d="m135.973 0h240.055v40.156h-240.055z"/></g></svg>
-
+                            <h3 className="mt-2">15/220</h3>
+                                <p className="mb-0">monedas</p>
                             </div>
 
                             
@@ -136,11 +128,11 @@ function PageApartados(props) {
 
                    
 
-               <motion.div className={zoom ? "col-md-12 flex-column" : "col-md-9  pl-5" }   initial={{opacity: 0, y: 400}} animate={{ opacity: 1, y: 0} } 
+               <motion.div className={zoom ? "col-md-12 flex-column" : "col-md-9" }   initial={{opacity: 0, y: 400}} animate={{ opacity: 1, y: 0} } 
                exit={{opacity: 0, y: 400}} transition={{delay: "0.4"}} >
 
                    <motion.div  className="container p-5" initial={{opacity: loading ? 0 : 1, minWidth: "60%"}} animate={{ opacity: loading ? 0 : 1}} transition={{duration: 0.4}}>
-                        {/* <video className="w-100 mb-4"  controls></video> */}
+                        <video className="w-100 mb-4"  src="https://www.youtube.com/watch?v=Lc6wyl1KdOc" controls></video>
                         
 
                         <div className="row m-0  justify-content-between">
@@ -162,7 +154,7 @@ function PageApartados(props) {
                         <div className="mt-3">
                             
                             <div className="parrafo mt-5 text-muted">
-                                <p style={{fontSize: "20px"}}>
+                                <p style={{fontSize: "20px"}} className="text-muted">
                                                                         Let’s start simple: a triangle is a closed shape that has three sides (which are line segments
                                         A line segment is the part of a <span style={{borderBottom: "3px rgb(255, 136, 0) solid"}}>line</span> that lies between two points, without extending to infinity. We can label line segments from point A to point B as AB‾.
 
@@ -177,10 +169,21 @@ function PageApartados(props) {
                                         The internal angles of a polygon are the angles on the inside, at every vertex.
 
                                         , and we already know that the sum of them is always 180°.
+
+                                        <TooltipCustom><span style={{borderBottom: "3px rgb(255, 136, 0) solid"}}>points</span></TooltipCustom>
+                                        re the sides meet). It also has three internal angles
+                                        The internal angles of a polygon are the angles on the inside, at every vertex.
+
+                                        , and we already know that the sum of them is always 180°.
+                                                                            
+                                        
                                 </p>
+
                             </div>
                             
                         </div>
+
+                        
                         
                     </motion.div>
 
@@ -189,6 +192,8 @@ function PageApartados(props) {
            </div>
 
         </motion.div>
+
+        </Base>
         
     )
 }
