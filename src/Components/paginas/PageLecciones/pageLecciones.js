@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react'
-import MensajeAsignatura from '../Components/componentesLecciones/mensajeAsignatura';
-import Leccion from '../Components/componentesLecciones/Leccion';
-import ListaLecciones from '../Components/componentesLecciones/listaLecciones';
+import Leccion from './componentesLecciones/Leccion';
+import ListaLecciones from './componentesLecciones/listaLecciones';
 import {
     BrowserRouter as Router,
 
     useParams
   } from "react-router-dom";
 import { motion } from 'framer-motion';
-import {notificacion} from '../Components/KnowleadgeOwl/owlNotifications';
-import Base from '../Containers/base';
+import Base from '../../Containers/base';
+import VolverAtras from '../../componentesNavegacion/volverAtras';
+
 
 function PageLecciones(props) {
 
@@ -61,9 +61,8 @@ function PageLecciones(props) {
         initial={{opacity: 0}}
         animate={{ opacity: 1}}
         exit={{opacity: 0}}  >
-
-            <MensajeAsignatura asignatura = {asignatura}></MensajeAsignatura>
             
+            <VolverAtras asignatura = {asignatura}></VolverAtras>
                 <div className="">
                 
                     {

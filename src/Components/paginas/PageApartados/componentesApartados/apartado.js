@@ -1,11 +1,10 @@
 import React from 'react'
-import ScrollFillCircle from '../componentesDecorativos/scrollFillCircle'
 import { motion } from 'framer-motion'
 
 function Apartado(props) {
     
     return (
-        <div onClick={props.onClick} className="text-left bg-light overflow-hidden mb-3 mr-3 " style={{borderRadius: "1rem"}}>
+        <div onClick={props.onClick} className="text-left overflow-hidden mb-3 mr-3 " style={{borderRadius: "1rem", backgroundColor: "#f5f5f5"}}>
                    
         <div className="row pt-3 pb-3 pl-3 pr-3 " style={{cursor: !props.enabled ? "pointer" : ""}}>
             

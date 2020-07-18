@@ -4,100 +4,13 @@ import { Row } from 'react-bootstrap'
 import ListBoxFlashCards from './listBoxFlashCards'
 import { act } from 'react-dom/test-utils'
 import { motion, AnimatePresence } from 'framer-motion'
-import Base from '../../Containers/base'
 import { Link } from 'react-router-dom'
+import Base from '../../../Containers/base'
 
-function ListFlashCards() {
+function ListFlashCards(props) {
 
-    const datos = [
-        {
-            id: 1,
-            nombre: "Inglés",
-            listaFlashcards : [
-                {
-                    titulo: "Tema 1: Tenses",
-                    flashcards: [
-                        {
-                            id: 1,
-                            nombre: "Present tenses",
-                            aprendido: 0
-                        },
-                        {
-                            id: 2,
-                            nombre: "Past tenses",
-                            aprendido: -1,
-                        },
-                        {
-                            id: 3,
-                            nombre: "Future tenses",
-                            aprendido: 0
-                        },
-                        {
-                            id: 4,
-                            nombre: "Present perfect",
-                            aprendido: 1
-                        }
-                    ]
-                }
 
-            ]
-        },
-        {
-            
-            id: 2,
-            nombre: "Física",
-            listaFlashcards : [
-                {
-                    titulo: "Tema 1: gravitacion",
-                    flashcards: [
-                        {
-                            id: 5,
-                            nombre: "Peneloe",
-                            aprendido: 1
-                        },
-                        {
-                            id: 6,
-                            nombre: "Matriz inversa",
-                            aprendido: 1
-                        },
-                        {
-                            id: 7,
-                            nombre: "Matriz inversa",
-                            aprendido: 1
-                        },
-                        {
-                            id: 8,
-                            nombre: "Matriz inversa",
-                            aprendido: 1
-                        },
-                        {
-                            id: 9,
-                            nombre: "Matriz inversa",
-                            aprendido: 0
-                        }
-                    ]
-                },
-                {
-                    titulo: "Tema 2: electromagnetismo",
-                    flashcards: [
-                        {
-                            id: 10,
-                            nombre: "Mentiras",
-                            aprendido: -1
-                        },
-                        {
-                            id: 11,
-                            nombre: "Mentiras2",
-                            aprendido: 1
-                        }
-                    ]
-                }
-
-            ]
-        }
-    ]
-
-    const [actualAsignatura, setActualAsignatura] = useState(datos[0])
+    const [actualAsignatura, setActualAsignatura] = useState(props.db[0])
     const [loading, setLoading] = useState(false);
 
     const [flashcardsAJugar, setFlashCardsAJugar] = useState([])
@@ -124,6 +37,7 @@ function ListFlashCards() {
         }else{
             setFlashCardsAJugar(flashcardsAJugar.filter(item => item.id !== obj.id))
         }
+        
     }
     function isCheckedFlashcard(obj){
         //va a eliminar una flashcard según un objeto pasado por parametro
@@ -132,7 +46,7 @@ function ListFlashCards() {
 
 
     function setAsignatura(id){
-            const asignatura = datos.find(element => element.id === id)
+            const asignatura = props.db.find(element => element.id === id)
             setLoading(true)
 
             setTimeout(function(){
@@ -145,6 +59,7 @@ function ListFlashCards() {
     return (
     
         <div>
+            
             <Base>
             <div className="row mt-5">
                 <div className="col-md-3" style={{width: "20%", position: "fixed"}}>
@@ -154,7 +69,7 @@ function ListFlashCards() {
                         <div>
                             <h3 style={{fontWeight: "700"}} className="mb-5">Asignatura:</h3>
                             {
-                                datos.map((obj) => {
+                                props.db.map((obj) => {
                                     if(obj.id === actualAsignatura.id){
                                         return <h5 onClick={() => setAsignatura(obj.id)} className="mt-3 pl-3 pr-3 pt-2 pb-2" style={{cursor: "pointer", fontSize: "20px", color: "white", backgroundColor: "rgb(123, 201, 66)", borderRadius: "0.4rem"}}>{obj.nombre}</h5>
                                     }else{

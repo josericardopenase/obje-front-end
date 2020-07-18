@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Base from '../Containers/base'
+import Base from '../../Containers/base'
 import { Link } from 'react-router-dom'
-import FlashcardPrimary from '../Components/flashcard/flashcardPrimary'
+import FlashcardPrimary from './componentesPlayFlashcards/flashcardPrimary'
+
 
 function PagePlayFlashcards() {
 
@@ -39,6 +40,7 @@ function PagePlayFlashcards() {
     return (
         <div>
 
+            
         <motion.div
         initial={{opacity: 0}}
         animate={{ opacity: 1, y: 0}}

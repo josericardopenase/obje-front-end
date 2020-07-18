@@ -15,7 +15,7 @@ function ListaApartados(props) {
         <div>
             <h4 className="mt-5 mb-5">Apartados:</h4>
 
-            {listaApartados}
+                {listaApartados}
             
          </div>
     )

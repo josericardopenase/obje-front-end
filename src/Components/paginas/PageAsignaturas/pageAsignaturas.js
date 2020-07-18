@@ -1,9 +1,9 @@
 import React from 'react'
-import ListaAsignaturas from '../Components/componentesAsignaturas/listaAsignaturas'
-import SearchBar from '../Components/componentesAsignaturas/searchBar'
-import Bienvenido from '../Components/componentesAsignaturas/bienvenido'
+import ListaAsignaturas from './componentesAsignaturas/listaAsignaturas'
+import SearchBar from './componentesAsignaturas/searchBar'
+import Bienvenido from './componentesAsignaturas/bienvenido'
 import { AnimatePresence, motion } from "framer-motion"
-import Base from '../Containers/base'
+import Base from '../../Containers/base'
 
 const PageAsignaturas = (props) => {
 
@@ -43,6 +43,7 @@ const PageAsignaturas = (props) => {
 
       
     return (
+
       <Base>
         <motion.div
         initial={{opacity: 0}}

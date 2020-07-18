@@ -1,24 +1,20 @@
 import React from 'react';
 import Sidebar from './Components/sidebar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Bienvenido from './Components/componentesAsignaturas/bienvenido';
-import Asignatura from './Components/componentesAsignaturas/asignatura';
-import SearchBar from './Components/componentesAsignaturas/searchBar';
-import ListaAsignaturas from './Components/componentesAsignaturas/listaAsignaturas';
-import PageAsignaturas from './Pages/pageAsignaturas';
-import { BrowserRouter, Route, Switch, useLocation } from 'react-router-dom';
-import NotFound from './Components/NotFound';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import PageLecciones from './Pages/pageLecciones';
-import mensajeAsignatura from './Components/componentesLecciones/mensajeAsignatura';
-import PageApartados from './Pages/pageApartados';
+import { Route, Switch, useLocation } from 'react-router-dom';
+
 import { AnimatePresence } from 'framer-motion';
 import Owl from './Components/KnowleadgeOwl/owl';
-import MenuBox from './Components/componentesSidebar/menuBox';
+
+
 import ListaMenuSidebar from './Components/componentesSidebar/listaMenuSidebar';
-import PageFlashcards from './Pages/pageFlashcards';
-import Base from './Containers/base';
-import PagePlayFlashcards from './Pages/PagePlayFlashcards';
+import PagePlayFlashcards from './Components/paginas/PagePlayFlashcards/PagePlayFlashcards';
+import PageAsignaturas from './Components/paginas/PageAsignaturas/pageAsignaturas';
+import PageFlashcards from './Components/paginas/PageFlashcards/pageFlashcards';
+import PageLecciones from './Components/paginas/PageLecciones/pageLecciones';
+import NotFound from './Components/paginas/PageNotFound/NotFound';
+import PageApartados from './Components/paginas/PageApartados/pageApartados';
+
 
 
 function App(props) {
@@ -43,7 +39,6 @@ function App(props) {
 
             
                
-
                 <AnimatePresence exitBeforeEnter >
                     <Switch location={location} key={location.pathname}>
                         <Route exact path="/" component={PageAsignaturas}></Route>
@@ -51,13 +46,14 @@ function App(props) {
                         <Route exact path="/flashcards" component={PageFlashcards}></Route>
                         <Route  exact path="/:asignaturaID" component={PageLecciones}></Route>
                         <Route exact path="/:asignaturaID/:leccionID" component={PageApartados}></Route>
-
                         
                         
                         <Route component={NotFound}></Route>
                     </Switch>
 
                   </AnimatePresence>
+
+   
                 
             
 

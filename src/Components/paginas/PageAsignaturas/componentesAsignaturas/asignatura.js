@@ -28,14 +28,14 @@ function Asignatura(props) {
                 <div className="card text-white border-0 w-100  mb-lg-0 position-relative" style={{background: `linear-gradient(to bottom right, ${props.obj.color1}, ${props.obj.color2})`, borderRadius: "25px"}}>
                     <div className="row">
 
-                        <div className="col-md-4">
+                        <div className="col-4 ">
 
-                            <img src={process.env.PUBLIC_URL + '/'+props.obj.imagen} className="m-3 w-100 p-xl-2" style={{fill: "white"}} alt="..."></img>
+                            <img src={process.env.PUBLIC_URL + '/'+props.obj.imagen} className="m-3 w-100 p-xl-3" style={{fill: "white"}} alt="..."></img>
                             <img src={process.env.PUBLIC_URL + '/'+props.obj.imagen} className="m-3" style={{fill: "white", position: "absolute", top: "-20%", left: "-20%", opacity: 0.1}} height="200px" width="200px" alt="..."></img>
 
                         </div>
         
-                        <div className="col-md-8">
+                        <div className="col-8">
                             <div className="d-flex flex-column justify-content-center h-100">
                                 <div className="w-100 justify-content-center">
                                 <h4 className=" card-title mb-0">{props.obj.titulo}</h4>

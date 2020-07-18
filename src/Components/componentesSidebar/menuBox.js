@@ -4,7 +4,7 @@ const MenuBox = (props) => {
 
 
 
-    const style = {
+    let style = {
         width: "45px", 
         height: "45px", 
         textAlign: "center",
@@ -27,7 +27,17 @@ const MenuBox = (props) => {
     if(props.enable){
         styleColor = {
             fill: "#7BC942",
-            transform: "scale(1.2)",
+            transform: "scale(1)"
+        }
+
+        style = {
+            width: "45px", 
+            height: "45px", 
+            textAlign: "center",
+            borderRadius: "1rem",
+            textColor: "#414141",
+            borderRadius: "50%",
+            backgroundColor: "#f5f5f5"
         }
     }
 

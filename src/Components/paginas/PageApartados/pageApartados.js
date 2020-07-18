@@ -1,22 +1,21 @@
 import React, { useEffect } from 'react'
-import MensajeAsignatura from '../Components/componentesLecciones/mensajeAsignatura'
-import SearchBar from '../Components/componentesAsignaturas/searchBar';
-import Apartado from '../Components/componentesApartados/apartado';
+
+
 import  { useState} from 'react';
-import ListaApartados from '../Components/componentesApartados/listaApartados';
+import ListaApartados from './componentesApartados/listaApartados';
 import {
     motion,
     useViewportScroll,
     useSpring,
     useTransform
   } from "framer-motion";
-import ScrollFillCircle from '../Components/componentesDecorativos/scrollFillCircle';
 import { Tooltip } from 'react-bootstrap';
-import TooltipCustom from '../Components/componentesDecorativos/tooltipCustom';
-import Base from '../Containers/base';
+import TooltipCustom from '../../componentesDecorativos/tooltipCustom';
+import Apartado from './componentesApartados/apartado';
+import Base from '../../Containers/base';
+import VolverAtras from '../../componentesNavegacion/volverAtras';
 
 function PageApartados(props) {
-
 
 
     const DataBase = [
@@ -93,14 +92,11 @@ function PageApartados(props) {
 
 
            <div className="row">
-
                <div onMouseEnter={() => setScroll(true)} onMouseLeave={() => setScroll(false)}  className={zoom ? "col-md-4 flex-column d-none" :  "col-md-3 flex-column mb-5" } style={{zInxed: "200" }}>
-                    
+
                     <motion.div className="position-fixed mb-5" style={{width: "25%", overflowX: "hidden", overflowY: scroll ? "auto" : "hidden", height: "90vh"}} initial={{opacity: 0, x: -400}}
                                 animate={{ opacity: 1, x: 0}} exit={{opacity: 0, x: -400}}>   
-                        
-                        <MensajeAsignatura asignatura={leccion}></MensajeAsignatura>
-                        
+                                                    <VolverAtras asignatura={leccion}></VolverAtras>            
                         <div className="row mt-4 justify-content-center">
                             <div className="pr-3 pl-3 pt-5 pb-5 mr-3 flex-column justify-content-center text-center" style={{width: "15rem !important", backgroundColor: "#f5f5f5", borderRadius: "1rem"}}>
                             <svg id="Capa_1" enable-background="new 0 0 512 512" height="82" viewBox="0 0 512 512" width="82"  fill="grey" xmlns="http://www.w3.org/2000/svg"><g><path d="m145.397 482h-29.681v30h280.569v-30h-29.681v-99.146h-221.207z"/><path d="m376.028 101.168v-31.012h-240.055v31.012h-92.77v15c0 62.959 44.661 116.642 105.422 128.793 15.233 30.394 42.992 53.462 76.467 62.391l-34.446 45.502h130.378l-34.39-45.427c33.598-8.875 61.467-31.988 76.742-62.465 60.76-12.15 105.422-65.834 105.422-128.793v-15h-92.77zm-301.717 30h61.661s.532 73.139 1.541 79.39c-33.415-13.104-57.834-43.352-63.202-79.39zm300.176 79.39c1.009-6.251 1.541-79.39 1.541-79.39h61.661c-5.369 36.038-29.787 66.286-63.202 79.39z"/><path d="m135.973 0h240.055v40.156h-240.055z"/></g></svg>
@@ -120,6 +116,7 @@ function PageApartados(props) {
                             
 
                         </div>
+                        
                         <ListaApartados database={DataBase} leccionActual = {leccionActual} onClick = {ChangeLeccion}></ListaApartados>
                     
                     </motion.div>

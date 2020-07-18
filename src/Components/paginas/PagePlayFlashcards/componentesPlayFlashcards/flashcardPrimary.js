@@ -15,7 +15,7 @@ function FlashcardPrimary(props) {
         return (
 
 
-   <div>
+                <div>
 
                             <div className="text-center" style={{width: "100%"}}>
 
@@ -46,7 +46,7 @@ function FlashcardPrimary(props) {
 
 
 
-        </div>
+                </div>
 
         )
         

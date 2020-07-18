@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 
-function MensajeAsignatura(props) {
+function VolverAtras(props) {
     return (
 
         <motion.div className="mt-4 d-flex"         initial={{opacity: 0, x: -50}}
@@ -21,4 +21,4 @@ function MensajeAsignatura(props) {
     )
 }
 
-export default withRouter(MensajeAsignatura)
+export default withRouter(VolverAtras)
